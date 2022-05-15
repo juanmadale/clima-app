@@ -1,17 +1,18 @@
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWind } from '@fortawesome/free-solid-svg-icons'
+import * as T from '../../utils/theme'
 
 export const WeatherDisplayWrapper = styled.div`
   width: 100%;
-  color: #212121;
+  color: ${T.primaryTextColor};
   margin: 50px auto;
 `
+
 export const LocationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  margin-left: 10%;
   padding: 20px;
 `
 export const LocationTitle = styled.div`
@@ -31,7 +32,7 @@ export const WeatherWrapper = styled.div`
 export const MainCard = styled.div`
   display: flex;
   padding: 2em;
-  background-color: #e1bee7;
+  background-color: ${T.secondaryTextColor};
   flex-direction: column;
   justify-content: center;
   align-items: center;

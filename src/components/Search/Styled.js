@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
+import * as T from '../../utils/theme'
 
 export const SearchBar = styled.div`
   display: flex;
@@ -26,6 +27,7 @@ export const SearchInput = styled.input`
   border: none;
   margin-left: 20px;
   margin-right: 20px;
+  background-color: ${T.secondaryBackgroundColor};
 `
 
 export const SearchButton = styled.button`
@@ -33,14 +35,15 @@ export const SearchButton = styled.button`
   width: 150px;
   border: none;
   border-radius: 10px;
-  background-color: #ce93d8;
+  color: ${T.primaryTextColor};
+  background-color: ${T.secondaryTextColor};
+  cursor: pointer;
   &:hover {
-    background-color: #e1bee7;
-    cursor: pointer;
+    background-color: ${T.secondaryTextColorHover};
   }
   &:disabled {
     cursor: auto;
-    background-color: #e1bee7;
+    background-color: 'gray';
   }
 `
 
@@ -48,9 +51,10 @@ export const LocationIcon = styled(FontAwesomeIcon).attrs({
   icon: faLocationArrow,
   size: '2xl'
 })`
-  color: #ce93d8;
+  cursor: pointer;
+  color: ${T.secondaryTextColor};
   &:hover {
-    color: #e1bee7;
+    color: ${T.secondaryTextColorHover};
     cursor: pointer;
   }
 `
@@ -61,13 +65,14 @@ export const UnitSelectorWrapper = styled.div`
 `
 
 export const UnitSelector = styled.a`
+  color: ${T.primaryTextColor};
   &:hover {
     cursor: pointer;
   }
   ${props =>
     props.selected &&
     css`
-      color: #018786;
+      color: ${T.secondaryTextColor};
       font-weight: 700;
     `}
 `

@@ -3,6 +3,7 @@ import Search from '../Search/Search'
 import * as S from './Styled'
 import WeatherDisplay from '../WeatherDisplay/WeatherDisplay'
 import lottie from 'lottie-web'
+import Header from '../Header/Header'
 
 function Home() {
   const [weather, setWeather] = useState({
@@ -29,7 +30,7 @@ function Home() {
       lottie.destroy()
       lottie.loadAnimation({
         container: lottieLoading.current,
-        path: 'assets/loading.json',
+        path: '/clima-app/assets/loading.json',
         renderer: 'svg',
         autoplay: true,
         loop: true
@@ -39,6 +40,7 @@ function Home() {
 
   return (
     <>
+      <Header />
       <Search
         weather={weather}
         setWeather={setWeather}
@@ -49,7 +51,7 @@ function Home() {
         setIsMetric={setIsMetric}
       />
       {isLoading ? (
-        <S.loadingImage ref={lottieLoading} />
+        <S.LoadingImage ref={lottieLoading} />
       ) : (
         weather.city && (
           <WeatherDisplay
