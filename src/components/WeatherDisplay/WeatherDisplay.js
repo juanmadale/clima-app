@@ -86,7 +86,7 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
               }`}</S.MainCardDescription>
             </S.MainCard>
             <S.SecondaryCard>
-              <ul>
+              <ul style={{ paddingLeft: '0' }}>
                 <S.SecondaryCardItem>{`Wind: ${weather.wind} ${
                   isMetric ? 'km/h' : 'mph'
                 }`}</S.SecondaryCardItem>

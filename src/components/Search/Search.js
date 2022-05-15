@@ -154,7 +154,6 @@ function Search({
         <S.UnitSelector onClick={() => handleClick(true)} selected={isMetric}>
           Metric
         </S.UnitSelector>
-        <span> | </span>
         <S.UnitSelector onClick={() => handleClick(false)} selected={!isMetric}>
           Imperial
         </S.UnitSelector>

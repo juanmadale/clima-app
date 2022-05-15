@@ -4,22 +4,24 @@ import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
 import * as T from '../../utils/theme'
 
 export const SearchBar = styled.div`
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px 0px 50px 0px;
+  margin: 50px auto;
 `
 
 export const SearchForm = styled.form`
   display: flex;
-  width: 80%;
+  width: 90%;
   justify-content: center;
   align-items: center;
 `
 
 export const SearchInput = styled.input`
   height: 50px;
-  width: 40%;
+  width: 50%;
+  min-wdith: 20%;
   font-size: 24px;
   padding: 0.2rem 1rem 0.2rem 1rem;
   outline: none;
@@ -60,8 +62,10 @@ export const LocationIcon = styled(FontAwesomeIcon).attrs({
 `
 
 export const UnitSelectorWrapper = styled.div`
-  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
+  width: 10%;
 `
 
 export const UnitSelector = styled.a`

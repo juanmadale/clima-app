@@ -5,6 +5,8 @@ import * as T from './theme'
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${T.primaryBackgroundColor};
+    margin: auto;
+    height: 100%;
   }
 `
 

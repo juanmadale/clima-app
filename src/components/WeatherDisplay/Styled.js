@@ -6,9 +6,8 @@ import * as T from '../../utils/theme'
 export const WeatherDisplayWrapper = styled.div`
   width: 100%;
   color: ${T.primaryTextColor};
-  margin: 50px auto;
+  margin: 100px auto;
 `
-
 export const LocationWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,9 +21,9 @@ export const LocationSubtitle = styled.div`
   font-size: 24px;
 `
 export const WeatherWrapper = styled.div`
-  width: 100%;
+  width: 70%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin: 50px auto;
 `
@@ -36,7 +35,7 @@ export const MainCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20%;
+  min-width: 30%;
   backdrop-filter: 'blur(10px)';
   background-image: linear-gradient(
     to bottom right,
@@ -54,13 +53,25 @@ export const MainCardDescription = styled.div`
 `
 export const SecondaryCard = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-width: 20%;
+  background-color: ${T.secondaryTextColor};
   align-items: center;
-  min-width: 30%;
+  backdrop-filter: 'blur(10px)';
+  justify-content: center;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.4)
+  );
+  border-radius: 20px;
+  box-shadow: 3px 3px 3px rgba(10, 10, 10, 0.1);
 `
 export const SecondaryCardItem = styled.li`
   list-style: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+  margin: 2em 0;
 `
 
 export const LocationNotFoundWrapper = styled.div`

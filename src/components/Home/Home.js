@@ -39,7 +39,7 @@ function Home() {
   })
 
   return (
-    <>
+    <S.HomeWrapper>
       <Header />
       <Search
         weather={weather}
@@ -62,7 +62,7 @@ function Home() {
           />
         )
       )}
-    </>
+    </S.HomeWrapper>
   )
 }
 
