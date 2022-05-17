@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${T.primaryBackgroundColor};
     margin: auto;
     height: 100%;
+    font-family: inter, sans-serif;
   }
 `
 

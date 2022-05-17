@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWind } from '@fortawesome/free-solid-svg-icons'
 import * as T from '../../utils/theme'
+import { StyledIconBase } from '@styled-icons/styled-icon'
 
 export const WeatherDisplayWrapper = styled.div`
   width: 100%;
@@ -53,7 +54,7 @@ export const MainCardDescription = styled.div`
 `
 export const SecondaryCard = styled.div`
   display: flex;
-  min-width: 20%;
+  min-width: 30%;
   background-color: ${T.secondaryTextColor};
   align-items: center;
   backdrop-filter: 'blur(10px)';
@@ -65,10 +66,17 @@ export const SecondaryCard = styled.div`
   );
   border-radius: 20px;
   box-shadow: 3px 3px 3px rgba(10, 10, 10, 0.1);
+  ${StyledIconBase} {
+    height: 20px;
+    vertical-align: -2px;
+    font-weight: bold;
+  }
 `
+
 export const SecondaryCardItem = styled.li`
+  display: block;
   list-style: none;
-  list-style-position: inside;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   margin: 2em 0;

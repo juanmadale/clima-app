@@ -1,6 +1,11 @@
 import React, { useRef, useEffect } from 'react'
 import * as S from './Styled'
 import lottie from 'lottie-web'
+import { Wind } from '@styled-icons/bootstrap/Wind'
+import { Drop } from '@styled-icons/entypo/Drop'
+import { CloudsFill } from '@styled-icons/bootstrap/CloudsFill'
+import { Sunset } from '@styled-icons/feather/Sunset'
+import { Sunrise } from '@styled-icons/feather/Sunrise'
 
 const WeatherDisplay = ({ weather, error, isMetric }) => {
   const countryName = new Intl.DisplayNames(['en'], { type: 'region' })
@@ -25,7 +30,7 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
       lottie.destroy()
       lottie.loadAnimation({
         container: lottieLocationNotFound.current,
-        path: 'assets/location_not_found.json',
+        path: '/clima-app/assets/location_not_found.json',
         renderer: 'svg',
         autoplay: true,
         loop: true
@@ -56,6 +61,38 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
     }
   }
 
+  const formatDateAndTime = (seconds, bool) => {
+    const sec = seconds
+    let fullDate = new Date(sec * 1000)
+    const timeString = fullDate.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: bool
+    })
+    const dateString = fullDate.toString()
+    const splitDate = dateString.split(' ')
+
+    const hours = fullDate.getHours()
+    const splitTime = timeString.split(':')
+    const formattedTime = hours + ':' + splitTime[1]
+    const formattedDate =
+      splitDate[0] +
+      ' ' +
+      splitDate[1] +
+      ' ' +
+      splitDate[2] +
+      ',' +
+      ' ' +
+      splitDate[3]
+    console.log(formattedDate)
+    return [formattedDate, formattedTime]
+  }
+
+  const [, sunriseTime] = formatDateAndTime(weather.sunrise, !isMetric)
+  const [, sunsetTime] = formatDateAndTime(weather.sunset, !isMetric)
+  const [currentDate] = formatDateAndTime(weather.date, !isMetric)
+  const [, currentTime] = formatDateAndTime(weather.date, !isMetric)
+
   return (
     <S.WeatherDisplayWrapper>
       {error ? (
@@ -76,6 +113,8 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
                 <S.LocationSubtitle>
                   {countryName.of(weather.countryCode)}
                 </S.LocationSubtitle>
+                <S.MainCardDescription>{currentDate}</S.MainCardDescription>
+                <S.MainCardDescription>{currentTime}</S.MainCardDescription>
               </S.LocationWrapper>
               <div ref={lottieCondition}></div>
               <S.MainCardTitle>{`${weather.temperature} ${
@@ -87,11 +126,26 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
             </S.MainCard>
             <S.SecondaryCard>
               <ul style={{ paddingLeft: '0' }}>
-                <S.SecondaryCardItem>{`Wind: ${weather.wind} ${
-                  isMetric ? 'km/h' : 'mph'
-                }`}</S.SecondaryCardItem>
-                <S.SecondaryCardItem>{`Overcast: ${weather.overcast}%`}</S.SecondaryCardItem>
-                <S.SecondaryCardItem>{`Humidity: ${weather.humidity}%`}</S.SecondaryCardItem>
+                <S.SecondaryCardItem>
+                  <Sunrise />
+                  {` sunrise: ${sunriseTime}`}
+                </S.SecondaryCardItem>
+                <S.SecondaryCardItem>
+                  <Sunset />
+                  {` sunset: ${sunsetTime}`}
+                </S.SecondaryCardItem>
+                <S.SecondaryCardItem>
+                  <Wind />
+                  {` wind: ${weather.wind} ${isMetric ? 'km/h' : 'mph'}`}
+                </S.SecondaryCardItem>
+                <S.SecondaryCardItem>
+                  <CloudsFill />
+                  {` overcast: ${weather.overcast}%`}
+                </S.SecondaryCardItem>
+                <S.SecondaryCardItem>
+                  <Drop />
+                  {` humidity: ${weather.humidity}%`}
+                </S.SecondaryCardItem>
               </ul>
             </S.SecondaryCard>
           </S.WeatherWrapper>

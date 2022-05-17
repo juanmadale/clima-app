@@ -88,9 +88,13 @@ function Search({
         overcast: weatherInfo.data.clouds.all,
         feelsLike: Math.round(weatherInfo.data.main.feels_like),
         city: weatherInfo.data.name,
-        countryCode: weatherInfo.data.sys.country
+        countryCode: weatherInfo.data.sys.country,
+        sunrise: weatherInfo.data.sys.sunrise,
+        sunset: weatherInfo.data.sys.sunset,
+        date: weatherInfo.data.dt
       })
     } catch (e) {
+      console.log(weather.date)
       setError(e)
     }
     setIsLoading(false)

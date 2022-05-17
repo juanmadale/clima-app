@@ -14,7 +14,10 @@ function Home() {
     overcast: '',
     feelsLike: '',
     city: '',
-    countryCode: ''
+    countryCode: '',
+    sunrise: '',
+    sunset: '',
+    date: ''
   })
 
   const [error, setError] = useState(null)

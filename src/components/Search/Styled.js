@@ -22,6 +22,7 @@ export const SearchInput = styled.input`
   height: 50px;
   width: 50%;
   min-wdith: 20%;
+  color: ${T.primaryTextColor};
   font-size: 24px;
   padding: 0.2rem 1rem 0.2rem 1rem;
   outline: none;
@@ -44,8 +45,7 @@ export const SearchButton = styled.button`
     background-color: ${T.secondaryTextColorHover};
   }
   &:disabled {
-    cursor: auto;
-    background-color: 'gray';
+    cursor: not-allowed;
   }
 `
 
@@ -63,8 +63,8 @@ export const LocationIcon = styled(FontAwesomeIcon).attrs({
 
 export const UnitSelectorWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
   width: 10%;
 `
 
