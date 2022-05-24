@@ -90,8 +90,6 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
 
   const [, sunriseTime] = formatDateAndTime(weather.sunrise, !isMetric)
   const [, sunsetTime] = formatDateAndTime(weather.sunset, !isMetric)
-  const [currentDate] = formatDateAndTime(weather.date, !isMetric)
-  const [, currentTime] = formatDateAndTime(weather.date, !isMetric)
 
   return (
     <S.WeatherDisplayWrapper>
@@ -113,8 +111,6 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
                 <S.LocationSubtitle>
                   {countryName.of(weather.countryCode)}
                 </S.LocationSubtitle>
-                <S.MainCardDescription>{currentDate}</S.MainCardDescription>
-                <S.MainCardDescription>{currentTime}</S.MainCardDescription>
               </S.LocationWrapper>
               <div ref={lottieCondition}></div>
               <S.MainCardTitle>{`${weather.temperature} ${
@@ -125,7 +121,7 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
               }`}</S.MainCardDescription>
             </S.MainCard>
             <S.SecondaryCard>
-              <ul style={{ paddingLeft: '0' }}>
+              <ul style={{ padding: '0' }}>
                 <S.SecondaryCardItem>
                   <Sunrise />
                   {` sunrise: ${sunriseTime}`}
@@ -144,7 +140,7 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
                 </S.SecondaryCardItem>
                 <S.SecondaryCardItem>
                   <Drop />
-                  {` humidity: ${weather.humidity}%`}
+                  {`humidity: ${weather.humidity}%`}
                 </S.SecondaryCardItem>
               </ul>
             </S.SecondaryCard>

@@ -4,7 +4,7 @@ import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
 import * as T from '../../utils/theme'
 
 export const SearchBar = styled.div`
-  width: 70%;
+  height: calc(1rem + 2vw);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,36 +13,40 @@ export const SearchBar = styled.div`
 
 export const SearchForm = styled.form`
   display: flex;
-  width: 90%;
+  height: 100%;
+  width: 50%;
   justify-content: center;
   align-items: center;
+  @media (min-width: 0px) {
+    width: 75%;
+  }
+  @media (min-width: 600px) {
+    width: 40%;
+  }
 `
 
 export const SearchInput = styled.input`
-  height: 50px;
-  width: 50%;
-  min-wdith: 20%;
-  color: ${T.primaryTextColor};
-  font-size: 24px;
-  padding: 0.2rem 1rem 0.2rem 1rem;
+  width: 200%;
+  color: ${T.primaryColor};
+  font-size: calc(0.5rem + 0.5vw);
+  padding: 1rem;
   outline: none;
   border-radius: 10px;
   border: none;
-  margin-left: 20px;
-  margin-right: 20px;
-  background-color: ${T.secondaryBackgroundColor};
+  background-color: ${T.quaternaryColor};
 `
 
 export const SearchButton = styled.button`
-  height: 50px;
-  width: 150px;
+  padding: 1rem;
+  margin: 0 1rem;
   border: none;
   border-radius: 10px;
-  color: ${T.primaryTextColor};
-  background-color: ${T.secondaryTextColor};
+  color: ${T.primaryColor};
+  background-color: ${T.secondaryColor};
+  font-size: calc(0.5rem + 0.5vw);
   cursor: pointer;
   &:hover {
-    background-color: ${T.secondaryTextColorHover};
+    background-color: ${T.secondaryColorHover};
   }
   &:disabled {
     cursor: not-allowed;
@@ -50,33 +54,37 @@ export const SearchButton = styled.button`
 `
 
 export const LocationIcon = styled(FontAwesomeIcon).attrs({
-  icon: faLocationArrow,
-  size: '2xl'
+  icon: faLocationArrow
+  // size: '2xl'
 })`
   cursor: pointer;
-  color: ${T.secondaryTextColor};
+  margin-right: 1rem;
+  height: 60%;
+  color: ${T.secondaryColor};
   &:hover {
-    color: ${T.secondaryTextColorHover};
+    color: ${T.secondaryColorHover};
     cursor: pointer;
   }
 `
 
 export const UnitSelectorWrapper = styled.div`
   display: flex;
+
+  justtify-content: center;
   flex-direction: column;
   align-items: left;
-  width: 10%;
 `
 
 export const UnitSelector = styled.a`
-  color: ${T.primaryTextColor};
+  color: ${T.primaryColor};
+  font-size: calc(0.5rem + 0.5vw);
   &:hover {
     cursor: pointer;
   }
   ${props =>
     props.selected &&
     css`
-      color: ${T.secondaryTextColor};
+      color: ${T.secondaryColor};
       font-weight: 700;
     `}
 `

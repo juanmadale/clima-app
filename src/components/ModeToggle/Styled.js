@@ -6,7 +6,7 @@ export const ModeStyleWrapper = styled.div`
   margin-right: 10px;
   ${StyledIconBase} {
     height: 50px;
-    color: ${T.primaryTextColor};
+    color: ${T.primaryColor};
     cursor: pointer;
   }
 `

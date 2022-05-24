@@ -6,8 +6,8 @@ import { StyledIconBase } from '@styled-icons/styled-icon'
 
 export const WeatherDisplayWrapper = styled.div`
   width: 100%;
-  color: ${T.primaryTextColor};
-  margin: 100px auto;
+  color: ${T.primaryColor};
+  margin: calc(2rem + 4vw) auto;
 `
 export const LocationWrapper = styled.div`
   display: flex;
@@ -15,15 +15,11 @@ export const LocationWrapper = styled.div`
   width: fit-content;
   padding: 20px;
 `
-export const LocationTitle = styled.div`
-  font-size: 46px;
-`
-export const LocationSubtitle = styled.div`
-  font-size: 24px;
-`
+
 export const WeatherWrapper = styled.div`
   width: 70%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   margin: 50px auto;
@@ -31,12 +27,12 @@ export const WeatherWrapper = styled.div`
 
 export const MainCard = styled.div`
   display: flex;
-  padding: 2em;
-  background-color: ${T.secondaryTextColor};
+  margin: 1rem;
+  padding: 2rem;
+  background-color: ${T.secondaryColor};
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 30%;
   backdrop-filter: 'blur(10px)';
   background-image: linear-gradient(
     to bottom right,
@@ -46,16 +42,41 @@ export const MainCard = styled.div`
   border-radius: 20px;
   box-shadow: 3px 3px 3px rgba(10, 10, 10, 0.1);
 `
+//review all these names
+export const LocationTitle = styled.div`
+  font-size: calc(1rem + 3vw);
+
+  @media (min-width: 1601px) {
+    font-size: 4rem;
+  }
+`
+export const LocationSubtitle = styled.div`
+  font-size: calc(1rem + 1vw);
+
+  @media (min-width: 1601px) {
+    font-size: 2rem;
+  }
+`
+//review this name. Clashes with locationTitle
 export const MainCardTitle = styled.div`
-  font-size: 70px;
+  font-size: calc(1rem + 3vw);
+
+  @media (min-width: 1601px) {
+    font-size: 4rem;
+  }
 `
 export const MainCardDescription = styled.div`
-  font-size: 14px;
+  font-size: calc(0.5rem + 0.5vw);
+
+  @media (min-width: 1601px) {
+    font-size: 1rem;
+  }
 `
 export const SecondaryCard = styled.div`
   display: flex;
-  min-width: 30%;
-  background-color: ${T.secondaryTextColor};
+  padding: 2rem;
+  margin: 1rem;
+  background-color: ${T.secondaryColor};
   align-items: center;
   backdrop-filter: 'blur(10px)';
   justify-content: center;
@@ -76,10 +97,8 @@ export const SecondaryCard = styled.div`
 export const SecondaryCardItem = styled.li`
   display: block;
   list-style: none;
-  font-size: 20px;
-  margin: 0;
-  padding: 0;
-  margin: 2em 0;
+  font-size: calc(0.75rem + 0.5vw);
+  padding: 1rem 0;
 `
 
 export const LocationNotFoundWrapper = styled.div`
