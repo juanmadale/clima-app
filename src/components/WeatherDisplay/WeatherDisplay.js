@@ -17,7 +17,7 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
       lottie.destroy()
       lottie.loadAnimation({
         container: lottieCondition.current,
-        path: getImagePath(),
+        path: '/clima-app/assets/2xx_thunderstorm.json',
         renderer: 'svg',
         autoplay: true,
         loop: true
