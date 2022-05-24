@@ -43,19 +43,19 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
     console.log(conditionId)
     switch (true) {
       case conditionId >= 200 && conditionId <= 232:
-        return '/clima-app/assets/weather_files/2xx_thunderstorm.json'
+        return '/clima-app/assets/2xx_thunderstorm.json'
       case conditionId >= 300 && conditionId <= 321:
-        return '/clima-app/assets/weather_files/3xx_drizzle.json'
+        return '/clima-app/assets/3xx_drizzle.json'
       case conditionId >= 500 && conditionId <= 531:
-        return '/clima-app/assets/weather_files/5xx_rain.json'
+        return '/clima-app/assets/5xx_rain.json'
       case conditionId >= 600 && conditionId <= 622:
-        return '/clima-app/assets/weather_files/6xx_snow.json'
+        return '/clima-app/assets/6xx_snow.json'
       case conditionId >= 701 && conditionId <= 781:
-        return '/clima-app/assets/weather_files/7xx_fog.json'
+        return '/clima-app/assets/7xx_fog.json'
       case conditionId === 800:
-        return '/clima-app/assets/weather_files/800_clear.json'
+        return '/clima-app/assets/800_clear.json'
       case conditionId >= 801 && conditionId <= 804:
-        return 'clima-app/assets/weather_files/80x_clouds.json'
+        return 'clima-app/assets/80x_clouds.json'
       default:
         return
     }
