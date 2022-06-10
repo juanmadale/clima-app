@@ -55,7 +55,7 @@ const WeatherDisplay = ({ weather, error, isMetric }) => {
       case conditionId === 800:
         return '/clima-app/assets/800_clear.json'
       case conditionId >= 801 && conditionId <= 804:
-        return 'clima-app/assets/80x_clouds.json'
+        return '/clima-app/assets/80x_clouds.json'
       default:
         return
     }
